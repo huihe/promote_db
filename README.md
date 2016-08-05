@@ -11,7 +11,8 @@
 <https://support.cloud.engineyard.com/hc/en-us/articles/205408068-Back-Up-the-Database>
 5. check the replica db is in sync with master by runing the below query, it should less than 60 seconds. 
 **After turn on maintenance mode the sync will stopped.**
-    > psql -U postgres -t -c "SELECT (now() - pg_last_xact_replay_timestamp()) AS time_lag;"
+
+  > psql -U postgres -t -c "SELECT (now() - pg_last_xact_replay_timestamp()) AS time_lag;"
 6. Disable App (turn on maintenance mode)
 7. Promote the slave database to master  
 <https://support.cloud.engineyard.com/hc/en-us/articles/205408228-Promote-a-Database-Replica>
